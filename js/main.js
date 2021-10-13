@@ -181,6 +181,9 @@ document.addEventListener('keydown', (e) => {
     case 32:
       droplook()
       break
+    case 27:
+      gameStop()
+      break
     default:
       break
   }
@@ -194,4 +197,11 @@ restartbutton.addEventListener('click', () => {
   playground.innerHTML = ''
   gametext.style.display = 'none'
   init()
+})
+
+stopRestartButton.addEventListener('click', () => {
+  gamestoptext.style.display = 'none'
+  downInterval = setInterval(() => {
+    moveBlock('top', 1)
+  }, duration)
 })
